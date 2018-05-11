@@ -13,5 +13,10 @@ namespace SistemaBancario
         {
 
         }
+
+        protected void CreateUser_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
