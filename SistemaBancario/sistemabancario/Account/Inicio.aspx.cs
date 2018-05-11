@@ -11,7 +11,8 @@ namespace SistemaBancario.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label2.Text = Conexion.nombre;
+            Label4.Text = Conexion.cuenta;
         }
     }
 }

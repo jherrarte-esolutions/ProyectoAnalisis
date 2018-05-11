@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using SistemaBancario.Models;
 
+
 namespace SistemaBancario.Account
 {
     public partial class Login : Page
@@ -25,7 +26,12 @@ namespace SistemaBancario.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (IsValid)
+            Conexion con = new Conexion();
+            if (con.Buscar(Email.Text, Password.Text)){
+                Response.Redirect("/Account/Inicio");
+            }
+           
+           /* if (IsValid)
             {
                 // Validar la contraseña del usuario
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -55,7 +61,7 @@ namespace SistemaBancario.Account
                         ErrorMessage.Visible = true;
                         break;
                 }
-            }
+            }*/
         }
     }
 }
